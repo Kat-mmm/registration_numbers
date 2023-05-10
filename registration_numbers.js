@@ -44,7 +44,7 @@ function regNumber(){
     let regEl = document.createElement('div');
     regEl.className = 'item';
 
-    if(regNumberEl.value !== '' && validateRegNo(regNumberEl.value)){
+    if(regNumberEl.value !== '' && validateRegNo(regNumberEl.value) && !allRegNumbers1.includes(regNumberEl.value)){
         allRegNumbers1.push(regNumberEl.value);
 
         localStorage.setItem('allRegNumbers', JSON.stringify(allRegNumbers1));
@@ -55,7 +55,7 @@ function regNumber(){
         })
     }
     else{
-        errorEl.innerHTML = 'Please enter a valid registration number';
+        errorEl.innerHTML = 'Please enter a valid unique registration number';
         errorEl.style.display = 'block';
         setTimeout(() =>{
             errorEl.style.display = 'none';
@@ -68,10 +68,9 @@ function regNumber(){
 function filterRegNumbers() {
     regContainer.innerHTML = '';
     let selectedTown = town.value;
-    // console.log(allRegNumbers1);
+
     if(selectedTown === 'Cape Town') {
       let capeRegs = allFromTown(allRegNumbers1, 'CA');
-        //console.log(capeRegs);
 
       filter(capeRegs);
     }

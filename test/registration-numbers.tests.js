@@ -36,28 +36,28 @@ describe('Registration Numbers Tests', ()=>{
 
             regNumbers.setRegNumber('');
 
-            assert.equal('Please enter a valid registration number', regNumbers.addRegNumber());
+            assert.equal('Please enter a valid unique registration number', regNumbers.addRegNumber());
         })
         it('should return and error message if only numbers are provided', ()=>{
             let regNumbers = new RegistrationNumbers();
 
             regNumbers.setRegNumber('123-456');
 
-            assert.equal('Please enter a valid registration number', regNumbers.addRegNumber());
+            assert.equal('Please enter a valid unique registration number', regNumbers.addRegNumber());
         })
         it('should return and error message if only letters are provided', ()=>{
             let regNumbers = new RegistrationNumbers();
 
             regNumbers.setRegNumber('CA ');
 
-            assert.equal('Please enter a valid registration number', regNumbers.addRegNumber());
+            assert.equal('Please enter a valid unique registration number', regNumbers.addRegNumber());
         })
         it('should return and error message if an invalid town is provded', ()=>{
             let regNumbers = new RegistrationNumbers();
 
             regNumbers.setRegNumber('CU 123-456');
 
-            assert.equal('Please enter a valid registration number', regNumbers.addRegNumber());
+            assert.equal('Please enter a valid unique registration number', regNumbers.addRegNumber());
         })
     })
 

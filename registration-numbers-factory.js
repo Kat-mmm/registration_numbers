@@ -12,11 +12,11 @@ function RegistrationNumbers(){
     }
 
     function addRegNumber(){
-        if(theRegNumber !== '' && validateRegNo(theRegNumber)){
+        if(theRegNumber !== '' && validateRegNo(theRegNumber) && !regNumbers.includes(theRegNumber)){
             regNumbers.push(theRegNumber);
         }
         else{
-            return 'Please enter a valid registration number';
+            return 'Please enter a valid unique registration number';
         }
     }
 
@@ -43,7 +43,7 @@ function RegistrationNumbers(){
         return newArr;
     }
 
-    function filterRegNumbers(regNumbers) {
+    function filterRegNumbers() {
         if(selectedTown === 'Cape Town') {
             let capeRegs = allFromTown('CA');
             
