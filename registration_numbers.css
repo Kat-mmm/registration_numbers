@@ -103,4 +103,13 @@ p{
     display: none;
 }
 
+@media only screen and (max-width: 1000px) {
+    .container{
+        width: 90%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+  
+
 
