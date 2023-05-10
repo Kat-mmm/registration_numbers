@@ -37,7 +37,7 @@ function allFromTown(allRegNumbers, city) {
     }
   
     return newArr;
-  }
+}
   
 
 function regNumber(){
