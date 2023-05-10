@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./registration_numbers.css">
+    <title>Registration Numbers</title>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <label for="reg">Registration Number:</label>
+            <p style="margin: 0;" class="error"></p>
+            <input class="reg-input" type="text" name="reg" placeholder="e.g (CA 15688)">
+            <p>Examples of allowed registration numbers:</p>
+            <p style="color: green;" class="eg">(CA 1234, CL 123-456, CF 12345, CJ 123-4)</p>
+            <div class="btns">
+                <button class="add-btn">Add</button>
+                <button class="clear-btn">Clear</button>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <label for="town">Town:</label>
+            <select id="town" name="town">
+                <option value="">--Select Town--</option>
+                <option value="Cape Town">Cape Town</option>
+                <option value="Paarl">Paarl</option>
+                <option value="Kuils River">Kuils River</option>
+                <option value="Stellenbosch">Stellenbosch</option>
+            </select>
+            <button class="filter-btn">Show</button>
+            
+        </div>
+
+        <div class="plates">
+            
+        </div>
+
+    </div>
+
+    <script src="./registration_numbers.js" charset="utf-8"></script>
+</body>
+</html>
