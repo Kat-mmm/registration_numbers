@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Acumin Pro';
-    src: url('/fonts/GerhanaMatahari-gxWvY.otf') format('woff2'),
-         url('/fonts/GerhanaMatahari-gxWvY.otf') format('woff');
+    src: url('./fonts/GerhanaMatahari-gxWvY.otf') format('woff2'),
+         url('./fonts/GerhanaMatahari-gxWvY.otf') format('woff');
     font-weight: normal;
     font-style: normal;
 }
