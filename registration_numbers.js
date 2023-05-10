@@ -6,7 +6,9 @@ let regContainer = document.querySelector('.plates');
 let town = document.getElementById('town');
 let errorEl = document.querySelector('.error');
 
-let allRegNumbers1 = JSON.parse(localStorage.getItem('allRegNumbers')) || [];
+let regNumberFactory = new RegistrationNumbers();
+
+let allRegNumbers1 = JSON.parse(localStorage.getItem('allRegNumbers')) || regNumberFactory.getRegNumbers();
 
 filter(allRegNumbers1);
 
@@ -55,7 +57,7 @@ function regNumber(){
         })
     }
     else{
-        errorEl.innerHTML = 'Please enter a valid unique registration number';
+        errorEl.innerHTML = regNumberFactory.error();
         errorEl.style.display = 'block';
         setTimeout(() =>{
             errorEl.style.display = 'none';
@@ -72,22 +74,54 @@ function filterRegNumbers() {
     if(selectedTown === 'Cape Town') {
       let capeRegs = allFromTown(allRegNumbers1, 'CA');
 
-      filter(capeRegs);
+      if(capeRegs.length > 0){
+        filter(capeRegs);
+      }
+      else{
+        regContainer.innerHTML = regNumberFactory.emptyError();
+        setTimeout(()=>{
+            regContainer.innerHTML = '';
+        }, 1000)
+      }
     }
     else if(selectedTown === 'Paarl'){
         let paarlRegs = allFromTown(allRegNumbers1, 'CJ');
 
-        filter(paarlRegs);
+        if(paarlRegs.length > 0){
+            filter(paarlRegs);
+        }
+        else{
+            regContainer.innerHTML = regNumberFactory.emptyError();
+            setTimeout(()=>{
+                regContainer.innerHTML = '';
+            }, 1000)
+        }
     }
     else if(selectedTown === 'Kuils River'){
         let georgeRegs = allFromTown(allRegNumbers1, 'CF');
 
-        filter(georgeRegs);
+        if(georgeRegs.length > 0){
+            filter(georgeRegs);
+        }
+        else{
+            regContainer.innerHTML = regNumberFactory.emptyError();
+            setTimeout(()=>{
+                regContainer.innerHTML = '';
+            }, 1000)
+        }
     }
     else if(selectedTown === 'Stellenbosch'){
         let stellRegs = allFromTown(allRegNumbers1, 'CL');
 
-        filter(stellRegs);
+        if(stellRegs.length > 0){
+            filter(stellRegs);
+        }
+        else{
+            regContainer.appendChild() = regNumberFactory.emptyError();
+            setTimeout(()=>{
+                regContainer.innerHTML = '';
+            }, 1000)
+        }
     }
     else{
         filter(allRegNumbers1)

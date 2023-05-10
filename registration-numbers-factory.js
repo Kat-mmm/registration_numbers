@@ -11,12 +11,16 @@ function RegistrationNumbers(){
         return theRegNumber;
     }
 
+    function getRegNumbers(){
+        return regNumbers;
+    }
+
     function addRegNumber(){
         if(theRegNumber !== '' && validateRegNo(theRegNumber) && !regNumbers.includes(theRegNumber)){
             regNumbers.push(theRegNumber);
         }
         else{
-            return 'Please enter a valid unique registration number';
+            return error();
         }
     }
 
@@ -41,6 +45,14 @@ function RegistrationNumbers(){
         }
       
         return newArr;
+    }
+
+    function error(){
+        return 'Please enter a valid unique registration number';
+    }
+
+    function emptyError(){
+        return 'No registration numbers to display';
     }
 
     function filterRegNumbers() {
@@ -72,9 +84,12 @@ function RegistrationNumbers(){
     return {
         setRegNumber,
         getRegNumber,
+        getRegNumbers,
         setTown,
         addRegNumber,
         allFromTown,
-        filterRegNumbers
+        filterRegNumbers,
+        error,
+        emptyError,
     }
 }
