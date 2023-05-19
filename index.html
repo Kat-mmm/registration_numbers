@@ -11,7 +11,7 @@
         <div class="top">
             <label for="reg">Registration Number:</label>
             <p style="margin: 0;" class="error"></p>
-            <input class="reg-input" type="text" name="reg" placeholder="e.g (CA 15688)">
+            <input class="reg-input" type="text" name="reg" placeholder="e.g. &nbsp; (CA 15688)">
             <p>Examples of allowed registration numbers:</p>
             <p style="color: green;" class="eg">(CA 1234, CL 123-456, CF 12345, CJ 123-4)</p>
             <div class="btns">
@@ -30,16 +30,52 @@
                 <option value="Stellenbosch">Stellenbosch</option>
             </select>
             <button class="filter-btn">Show</button>
-            
         </div>
 
         <div class="plates">
             
         </div>
-
     </div>
 
+    <div class="container-1">
+        <div class="top">
+            <label for="reg">Registration Number:</label>
+            <p style="margin: 0;" class="error2"></p>
+            <input class="reg-input2" type="text" name="reg" placeholder="e.g. &nbsp; (CA 15688)">
+            <p>Examples of allowed registration numbers:</p>
+            <p style="color: green;" class="eg">(CA 1234, CL 123-456, CF 12345, CJ 123-4)</p>
+            <div class="btns">
+                <button class="add-btn2">Add</button>
+                <button class="clear-btn2">Clear</button>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <label for="town2">Town:</label>
+            <select id="town2" name="town2">
+                <option value="">--Select Town--</option>
+                <option value="Cape Town">Cape Town</option>
+                <option value="Paarl">Paarl</option>
+                <option value="Kuils River">Kuils River</option>
+                <option value="Stellenbosch">Stellenbosch</option>
+            </select>
+            <button class="filter-btn2">Show</button>
+        </div>
+
+        <div class="plates2">
+            
+        </div>
+    </div>
+
+    <script type="text/x-template" class="regTemplate">
+        {{#each regNumbers}}
+            <div class='item'>{{this}}</div>
+        {{/each}}
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="./registration-numbers-factory.js" charset="utf-8"></script>
     <script src="./registration_numbers.js" charset="utf-8"></script>
+    <script src="./reg-numbers.handlebars.js" charset="utf-8"></script>
 </body>
 </html>

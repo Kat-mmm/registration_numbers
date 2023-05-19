@@ -41,7 +41,6 @@ function allFromTown(allRegNumbers, city) {
     return newArr;
 }
   
-
 function regNumber(){
     let regEl = document.createElement('div');
     regEl.className = 'item';
@@ -58,7 +57,7 @@ function regNumber(){
     }
     else{
         errorEl.innerHTML = regNumberFactory.error();
-        errorEl.style.display = 'block';
+        errorEl.style.display = 'block'; 
         setTimeout(() =>{
             errorEl.style.display = 'none';
         }, 1500)
@@ -79,8 +78,10 @@ function filterRegNumbers() {
       }
       else{
         regContainer.innerHTML = regNumberFactory.emptyError();
+        regContainer.style.display = 'block';
         setTimeout(()=>{
             regContainer.innerHTML = '';
+            regContainer.style.display = 'grid';
         }, 1000)
       }
     }
@@ -92,8 +93,10 @@ function filterRegNumbers() {
         }
         else{
             regContainer.innerHTML = regNumberFactory.emptyError();
+            regContainer.style.display = 'block';
             setTimeout(()=>{
                 regContainer.innerHTML = '';
+                regContainer.style.display = 'grid';
             }, 1000)
         }
     }
@@ -105,8 +108,10 @@ function filterRegNumbers() {
         }
         else{
             regContainer.innerHTML = regNumberFactory.emptyError();
+            regContainer.style.display = 'block';
             setTimeout(()=>{
                 regContainer.innerHTML = '';
+                regContainer.style.display = 'grid';
             }, 1000)
         }
     }
@@ -117,9 +122,11 @@ function filterRegNumbers() {
             filter(stellRegs);
         }
         else{
-            regContainer.appendChild() = regNumberFactory.emptyError();
+            regContainer.innerHTML = regNumberFactory.emptyError();
+            regContainer.style.display = 'block';
             setTimeout(()=>{
                 regContainer.innerHTML = '';
+                regContainer.style.display = 'grid';
             }, 1000)
         }
     }
@@ -129,11 +136,10 @@ function filterRegNumbers() {
 }
 
 function clear(){
-    localStorage.clear();
+    localStorage.removeItem('allRegNumbers');
     location.reload();
 }
-  
 
-addBtn.addEventListener('click', regNumber);
 filterBtn.addEventListener('click', filterRegNumbers);
+addBtn.addEventListener('click', regNumber);
 clearBtn.addEventListener('click', clear);
